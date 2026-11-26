@@ -14,4 +14,6 @@ jobs:
       - name: Run Python
         env:
           SECRET: ${{ secrets.SECRET }}
-        run: Start-Process powershell -ArgumentList '-NoExit', '-Command', 'python hello_world.py'
+        run: |
+          python hello_world.py
+          python hello_world.py > output.txt
