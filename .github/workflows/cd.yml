@@ -11,9 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run Python
+      - name: Build Docker image
+        run: docker build -t hello-secret .
+
+      - name: Run Docker container
         env:
           SECRET: ${{ secrets.SECRET }}
-        run: |
-          python hello_world.py
-          python hello_world.py > output.txt
+        run: docker run --rm -e SECRET hello-secret
