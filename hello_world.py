@@ -1,3 +1,3 @@
 import os
 
-print("Helloooooo " + os.environ["SECRET"])
+print("Helloooo " + os.environ["SECRET"])
